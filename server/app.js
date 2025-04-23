@@ -8,6 +8,11 @@ app.set("views", "./client/views");
 // Allows static configuration for public files
 app.use(express.static(__dirname.replace("/server", "") + "/client/public"));
 
+app.use(express.json());
+
+const addTodoList = require("./routes/addTodoList");
+app.use("/addTodoList", addTodoList);
+
 // Renders view page from ejs file
 app.get("/", (req, res) => {
   res.render("login", { nigger: "Hello World!" });
