@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/index.css" />
+    <script src="/index.ts"></script>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <h6 class="nav-bar__account--state">LOGOUT</h6>
+    </div>
+    <main class="container">
+      <section class="todo-list">
+        <h1 class="todo-list__title">To-Do List</h1>
+        <header class="todo-list-header">
+          <input id="todo-list-header__input" class="todo-list-header__input" />
+          <button class="todo-list-header__button" onclick="createTodoList()">
+            SUBMIT
+          </button>
+        </header>
+        <div class="todo-list-outputs"></div>
+      </section>
+    </main>
+  </body>
+</html>
