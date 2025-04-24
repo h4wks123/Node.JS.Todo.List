@@ -8,6 +8,9 @@ app.set("views", "./client/views");
 app.use(express.static(__dirname.replace("server", "") + "client/public"));
 app.use(express.json());
 
+const addTodoLists = require("./routers/addTodoList");
+app.use("/addTodoList", addTodoLists);
+
 app.get("/", (req: any, res: any) => {
   res.render("index");
 });
