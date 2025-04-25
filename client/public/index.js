@@ -18,9 +18,27 @@ let addTodoList = async () => {
     if (!response.ok) {
       throw new Error(`HTTP error! status ${response.status}`);
     }
+
+    displayTodoList();
   } catch (error) {
-    console.error("Fetching data has failed: ", error);
+    console.error("Fetching add data has failed: ", error);
   }
 };
 
-console.log("Test");
+let displayTodoList = async () => {
+  let todoListOutput = document.getElementById("todo-list-outputs");
+
+  try {
+    const response = await fetch("/displayTodoList");
+    const result = await response.json();
+
+    todoListOutput.innerHTML = "";
+    todoListOutput.innerHTML = result;
+    
+    console.log(result);
+  } catch (error) {
+    console.error("Fetching display data has failed: ", error);
+  }
+};
+
+displayTodoList();

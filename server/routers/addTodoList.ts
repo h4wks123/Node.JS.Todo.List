@@ -1,9 +1,12 @@
-const router = require("express").Router();
+import express from "express";
+import { todoListValues } from "../store/todoListValues";
 
-router.post("/", (req: any, res: any) => {
+let addTodoList = express.Router();
+
+addTodoList.post("/", (req: any, res: any) => {
   const receivedData = req.body.data;
-  console.log("Data received: ", receivedData);
+  todoListValues.push(receivedData);
   res.json({ message: "Data received successfully ", data: receivedData });
 });
 
-module.exports = router;
+export default addTodoList;
